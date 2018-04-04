@@ -17,7 +17,7 @@ describe('The Movie Store', () => {
     it('SAVE a new Movie', () => {
         let objectToSave = { name: 'Blade Runner' };
         objectToSave = store.save(objectToSave);
-        assert.ok(objectToSave);
+        assert.notEqual(objectToSave._id, undefined);
         current_id = objectToSave._id;
     });
 
@@ -33,7 +33,7 @@ describe('The Movie Store', () => {
     
     it('GET ALL movies back in an array', () => {
         const movieArray = store.getAll();
-        assert.ok(movieArray);
+        assert.notDeepEqual(movieArray, []);
     });
 
     it('GET ALL from an empty store with no movies', () => {
