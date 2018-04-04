@@ -21,4 +21,9 @@ describe('The Movie Store', () => {
         assert.deepEqual(objectToGet, { name: 'Blade Runner', _id: current_id });
     });
 
+    it('GET a movie attempt by bad ID that returns null', () => {
+        const objectToGet = store.get('bad id');
+        assert.equal(objectToGet, null);
+    });
+
 });
