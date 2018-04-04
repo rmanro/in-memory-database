@@ -1,0 +1,31 @@
+{
+  "name": "in-memory-database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "eslint .",
+    "start": "mocha -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmanro/in-memory-database.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmanro/in-memory-database/issues"
+  },
+  "homepage": "https://github.com/rmanro/in-memory-database#readme",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "mocha": "^5.0.5"
+  },
+  "dependencies": {
+    "id-generator": "^1.1.0"
+  }
+}
