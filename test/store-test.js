@@ -7,6 +7,8 @@ describe('The Movie Store', () => {
     let current_id;
     before(() => {
         store = new Store('The Movie Store');
+        store.save({ name: '2001: A Space Odyssey' });
+        store.save({ name: 'Star Trek' });
     });
 
     it('SAVE a new Movie', () => {
@@ -24,6 +26,11 @@ describe('The Movie Store', () => {
     it('GET a movie attempt by bad ID that returns null', () => {
         const objectToGet = store.get('bad id');
         assert.equal(objectToGet, null);
+    });
+    
+    it('GET ALL movies back in an array', () => {
+        const movieArray = store.getAll();
+        assert.ok(movieArray);
     });
 
 });
