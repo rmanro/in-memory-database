@@ -41,4 +41,14 @@ describe('The Movie Store', () => {
         assert.deepEqual(movieArray, []);
     });
 
+    it('REMOVE a movie', () => {
+        const movieToRemove = store.remove(current_id);
+        assert.deepEqual(movieToRemove, { removed: true });
+    });
+
+    it('REMOVE - attempt to remove one that doesn\'t exist', () => {
+        const movieToRemove = store.remove('bad id');
+        assert.deepEqual(movieToRemove, { removed: false });
+    });
+
 });
