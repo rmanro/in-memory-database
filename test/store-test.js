@@ -4,9 +4,12 @@ const Store = require('../lib/store');
 describe('The Movie Store', () => {
 
     let store;
+    let emptyStore;
     let current_id;
+    
     before(() => {
         store = new Store('The Movie Store');
+        emptyStore = new Store('The Empty Store');
         store.save({ name: '2001: A Space Odyssey' });
         store.save({ name: 'Star Trek' });
     });
@@ -31,6 +34,11 @@ describe('The Movie Store', () => {
     it('GET ALL movies back in an array', () => {
         const movieArray = store.getAll();
         assert.ok(movieArray);
+    });
+
+    it('GET ALL from an empty store with no movies', () => {
+        const movieArray = emptyStore.getAll();
+        assert.deepEqual(movieArray, []);
     });
 
 });
