@@ -8,8 +8,8 @@ describe('The Movie Store', () => {
     let current_id;
     
     before(() => {
-        store = new Store('The Movie Store');
-        emptyStore = new Store('The Empty Store');
+        store = new Store();
+        emptyStore = new Store();
         store.save({ name: '2001: A Space Odyssey' });
         store.save({ name: 'Star Trek' });
     });
